@@ -2,11 +2,9 @@
   "name": "redux-act-light",
   "version": "1.0.0",
   "description": "A simpler and smaller version of redux-act.",
-  "main": "dist/redux-act-light.js",
-  "module": "dist/redux-act-light.mjs",
-  "jsnext:main": "dist/redux-act-light.mjs",
+  "main": "lib/index.js",
   "scripts": {
-    "clean": "rm -rf lib",
+    "clean": "rm -rf lib dist",
     "build": "babel src --out-dir lib",
     "browserify": "mkdir -p dist && browserify -s ReduxActLight lib/index.js > dist/redux-act-light.js",
     "uglify": "uglifyjs dist/redux-act-light.js -o dist/redux-act-light.min.js",
