@@ -1,0 +1,48 @@
+{
+  "name": "redux-act-light",
+  "version": "1.0.0",
+  "description": "A simpler and smaller version of redux-act.",
+  "main": "dist/redux-act-light.js",
+  "module": "dist/redux-act-light.mjs",
+  "jsnext:main": "dist/redux-act-light.mjs",
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "babel src --out-dir lib",
+    "browserify": "mkdir -p dist && browserify -s ReduxActLight lib/index.js > dist/redux-act-light.js",
+    "uglify": "uglifyjs dist/redux-act-light.js -o dist/redux-act-light.min.js",
+    "prepublish": "npm run clean && npm run build && npm run browserify && npm run uglify",
+    "test": "NODE_ENV=test mocha --recursive --compilers js:babel-core/register --reporter mocha-better-spec-reporter",
+    "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive --reporter mocha-better-spec-reporter"
+  },
+  "repository": "williamoliveira/redux-act-light",
+  "keywords": [
+    "redux",
+    "action",
+    "reducer"
+  ],
+  "author": "William Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamoliveira/redux-act-light/issues"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "homepage": "https://github.com/williamoliveira/redux-act-light#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browserify": "^14.4.0",
+    "chai": "^4.1.2",
+    "chai-spies-next": "^0.9.3",
+    "isparta": "^4.0.0",
+    "mocha": "^4.0.1",
+    "mocha-better-spec-reporter": "^3.1.0",
+    "uglify-js": "^3.1.3"
+  }
+}
