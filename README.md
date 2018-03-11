@@ -1,6 +1,6 @@
 # redux-act-light
 
-A simpler and smaller version of [redux-act](https://github.com/pauldijou/redux-act), limited only to its central API
+A simpler and smaller version of [redux-act](https://github.com/pauldijou/redux-act), limited only to its core API
 
 ## Install
 
